@@ -3,7 +3,6 @@ import os
 from random import randint
 
 
-
 class Pimba:
     def __init__(self, nome, fome, saude, idade):
         self.nome = nome
@@ -63,24 +62,23 @@ class Pimba:
 
         if dar_comida < 0:
             print(f'Não podes dar {dar_comida} de comida para {self.nome}')
-    
+
     def brincar(self):
-        tempo_brincar = input(f'Por quanto tempo deseja brincar com {self.nome}?  [0 á 10 min] ').strip()
+        tempo_brincar = input(
+            f'Por quanto tempo deseja brincar com {self.nome}?  [0 á 10 min] ').strip()
         tempo_brincar = int(tempo_brincar)
         if tempo_brincar < 1:
             tempo_brincar = 1
         elif tempo_brincar > 10:
             tempo_brincar = 10
         self.saude += (tempo_brincar / 2)
-    
+
     def str(self):
         print(f'Nome: {self.nome} \n'
               f'Fome: {self.fome} \n'
               f'Saúde: {self.saude} \n'
               f'Idade: {self.idade} \n'
               f'Humor: {self.saude + self.fome}')
-        
-        
 
 
 def criarPimba(nome, fome, saude, idade):
