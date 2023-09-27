@@ -42,4 +42,4 @@ def verificador_cpf(cpfp):
         print(f'O segundo digito do seu cpf é {somacpf_dois}')
 
 
-verificador_cpf('045.315.780-74')
+verificador_cpf('CPF aqui')
