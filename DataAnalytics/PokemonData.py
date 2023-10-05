@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 
 df = pd.DataFrame(pd.read_csv('Pokemon.csv'))
@@ -9,7 +10,7 @@ df = pd.DataFrame(pd.read_csv('Pokemon.csv'))
 print('-'*50)
 print('Top 5 Pokemons with more health points')
 print()
-most_hp = df.nlargest(5, 'HP')[['Name', 'HP']]
+most_hp = df.nlargest(5, 'HP')[['Name', 'HP', 'Generation']]
 print(most_hp)
 
 print()
@@ -18,28 +19,38 @@ print()
 print('-'*50)
 print('Top 5 Pokemons with more ATK damage')
 print()
-most_atk = df.nlargest(5, 'Attack')[['Name', 'Attack']]
+most_atk = df.nlargest(5, 'Attack')[['Name', 'Attack', 'Generation']]
 print(most_atk)
 
 print()
 
 # Ver os 5 Pokemons com mais speed;
 print('-'*50)
-print('Top 5 Pokemons with more speed')
+print('Top 5 Pokemons with more speed points')
 print()
-most_speed = df.nlargest(5, 'Speed')[['Name', 'Speed']]
+most_speed = df.nlargest(5, 'Speed')[['Name', 'Speed', 'Generation']]
 print(most_speed)
 
 print()
 
-# Ver 5 Pokemons de tipo fogo e voador;
+# Ver os 5 lendários com mais defense;
+print('-'*50)
+print('Top 5 legendary Pokemons with more defense points')
+print()
+lgdry = df.loc[df['Legendary'] == True]
+lgdry_hp_atk = lgdry.nlargest(5, 'Defense')[['Name', 'Defense', 'Generation']]
+print(lgdry_hp_atk)
 
-fire_and_fly = df.nlargest(5, ['Defense'])
+print()
 
-# Ver os 5 lendários com mais HP e ATK;
-# for linha in range(len(df)):
-#     if df['Legendary'] == 'True':
-#         df_lgndry = pd.DataFrame(df['Name', 'HP', 'Attack'])
+# Ver 5 pokemons do tipo fogo com mais pontos de atk;
+print('-'*50)
+print('Top 5 fire Pokemons with more ATK damage')
+print()
+fire_poke = df.loc[df['Type 1'] == 'Fire']
+fire_atk = fire_poke.nlargest(
+    5, 'Attack')[['Name', 'Type 1', 'Attack', 'Generation']]
+fire_atk.shape
+print(fire_atk)
 
-
-# print(df_lgndry)
+print()
