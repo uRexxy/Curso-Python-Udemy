@@ -54,3 +54,13 @@ fire_atk.shape
 print(fire_atk)
 
 print()
+
+# Ver os tipos de pokemon que mais aparecem (Type 1);
+print('-'*50)
+print('Types of pokemon that appear most (type 1)')
+print()
+columnstypeone = df[['Type 1']]
+columnstypeone = columnstypeone.value_counts()
+print(columnstypeone)
+
+print()
