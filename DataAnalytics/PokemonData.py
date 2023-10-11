@@ -1,8 +1,8 @@
 import pandas as pd
-import numpy as np
 
-
-df = pd.DataFrame(pd.read_csv('Pokemon.csv'))
+# Abrindo o arquivo csv;
+file_path = r"C:\Users\Tadin\OneDrive\Documentos\Curso Python Udemy\Base_de_dados\Pokemon.csv"
+df = pd.DataFrame(pd.read_csv(file_path))
 
 
 # OBJETIVOS
@@ -12,7 +12,6 @@ print('Top 5 Pokemons with more health points')
 print()
 most_hp = df.nlargest(5, 'HP')[['Name', 'HP', 'Generation']]
 print(most_hp)
-
 print()
 
 # Ver os 5 Pokemons com mais ATK;
