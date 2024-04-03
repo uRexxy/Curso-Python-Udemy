@@ -1,6 +1,15 @@
 from time import sleep
 import os
 from random import randint
+from tkinter import *
+
+
+janela = Tk()
+janela.title('Crie seu Pimba')
+janela.geometry('600x400')
+janela.configure(background='#141313')
+
+janela.mainloop()
 
 fazenda = []
 
@@ -105,8 +114,6 @@ def criarPimba(nome, fome, saude, idade):
               '5 - Ver humor \n'
               '6 - Dar Comida \n'
               '7 - Brincar \n'
-              '8 - Criar Fazenda \n'
-              '9 - Ver Fazenda \n'
               '0 - Sair')
         r = str(input('Sua opção: ')).strip()
         print()
@@ -131,14 +138,6 @@ def criarPimba(nome, fome, saude, idade):
         elif r == '7':
             os.system('cls')
             Pimba1.brincar()
-        elif r == '8':
-            os.system('cls')
-            try:
-                num_pimbas = int(
-                    input('Quantos Pimbas querer colocar na fazenda? '))
-            except ValueError:
-                print('Digite um número válido.')
-            criarFazenda(num_pimbas)
         elif r == '0':
             print('Saindo...')
             sleep(1.5)
@@ -146,24 +145,6 @@ def criarPimba(nome, fome, saude, idade):
         elif r == '000':
             os.system('cls')
             Pimba1.str()
-        elif r == '9':
-            os.system('cls')
-            for pimba in fazenda:
-                print(
-                    f'Nome: {pimba.nome}, Idade: {pimba.idade}, Fome: {pimba.fome}, Saúde: {pimba.saude}')
-                print()
-                while True:
-                    print(
-                        '1 - Dar comida para todos \n'
-                        '2 - Brincar com todos \n'
-                        '4 - Ver fazenda \n'
-                        '3 - Excluír fazenda \n'
-                    )
-                    resp = str(input('Sua opção: '))
-                    if resp == '1':
-                        for pimba in fazenda:
-                            pass
-                        # Terminar de fazer o menu da fazenda
 
 
-criarPimba('Cleito', 6, 5, 6)
+# criarPimba('Cleito', 6, 5, 6)
