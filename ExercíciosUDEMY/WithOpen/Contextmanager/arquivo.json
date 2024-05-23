@@ -1,0 +1,18 @@
+{
+  "nome": "Rafael",
+  "sobrenome": "Moraes",
+  "endereco": [
+    {
+      "rua": "Tulipas",
+      "numero": 123
+    },
+    {
+      "rua": "Rosas",
+      "numero": 321
+    }
+  ],
+  "altura": 1.72,
+  "nascimento": "01/01/0001",
+  "estudante": true,
+  "nada": null
+}
