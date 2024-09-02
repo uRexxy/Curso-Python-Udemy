@@ -1,4 +1,4 @@
-Linha 1
+Linha 1
 Olá, escrevendo no arquivo!
 Mais um pouco de escrita.
 Usando writelines aqui.

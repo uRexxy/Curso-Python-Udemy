@@ -1,6 +1,7 @@
+from encodings import utf_8
 import os
 from time import sleep
-
+import json
 
 lista = []
 lista_inteira = []
@@ -75,3 +76,9 @@ while True:
             print(f'- {i}')
     sleep(0.5)
     print()
+
+    CAMINHO_ARQUIVO = "C:\\Users\\Tadin\\OneDrive\\Documentos\\Curso Python Udemy\\ExercíciosUDEMY\\"
+    CAMINHO_ARQUIVO += "Lista_tarefas.Json"
+
+    with open(CAMINHO_ARQUIVO, 'w', encoding='utf8') as arquivo:
+        json.dump(lista, arquivo, indent=2, ensure_ascii=False)

@@ -16,16 +16,16 @@ pessoa = {
 }
 
 
-caminho_arquivo = "C:\\Users\\Tadin\\OneDrive\\Documentos\\Curso Python Udemy\\ExercíciosUDEMY\\WithOpen\\Contextmanager\\"
-caminho_arquivo += "arquivo.json"
+CAMINHO_ARQUIVO = "C:\\Users\\Tadin\\OneDrive\\Documentos\\Curso Python Udemy\\ExercíciosUDEMY\\WithOpen\\Contextmanager\\"
+CAMINHO_ARQUIVO += "arquivo.json"
 
 # criando um arquivo .json e colocando as informações nele
-with open(caminho_arquivo, 'w', encoding='utf8') as arquivo:
+with open(CAMINHO_ARQUIVO, 'w', encoding='utf8') as arquivo:
     json.dump(pessoa, arquivo, indent=2)
 
 
 # abrindo um arquivo .json
-with open(caminho_arquivo, 'r', encoding='utf8') as arquivo:
+with open(CAMINHO_ARQUIVO, 'r', encoding='utf8') as arquivo:
     pessoa = json.load(arquivo)
     print(pessoa)
     print('#\n'*5)
